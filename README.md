@@ -61,7 +61,7 @@ There are built-in NodeJS libraries for this ([see http](https://nodejs.org/api/
 1. Execute the call
     ```
     const axios = require('axios');
-
+    //
     axios.get('https://randomuser.me/api/?results=2').then((response) => {
         response.data.results.forEach((person) => {
             console.log(`Email: ${person.email}`);
@@ -78,6 +78,8 @@ NodeJS allows you to access things on the disk.  Browsers do not allow this.
 
 1. `fs.readFile()` to execute the read
     ```
+    const fs = require('fs');
+    //
     fs.readFile('./my-sample.json', (err, data) => {
         console.log('My file data:', JSON.parse(data));
     });
@@ -92,6 +94,8 @@ A lot of the time NodeJS is used as a REST endpoint.  This can be done very easi
 1. `npm install express --save` to download and install the dependency
 1. Require the library and setup the server.
     ```
+    const express = require('express');
+    //
     const app = express();
     app.get('/', (req, res) => {
         res.send('Hello world!');
